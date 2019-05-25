@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.muhammadashfaq.eatit">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".utils.AppController"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/eatitiicon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/eatitiicon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
+        <activity android:name=".HomeResturant"
+            android:parentActivityName=".Home"></activity>
+        <activity android:name=".RecentlyAddedResActivity"
+            android:parentActivityName=".Home"/>
+        <activity android:name=".AddResturantMapActivity"
+            android:parentActivityName=".Home"/>
+        <activity android:name=".PlaceListActivity"
+            android:parentActivityName=".Home"/>
+        <activity android:name=".AddResturant"
+            android:parentActivityName=".Home"/>
+        <activity android:name=".NearbyResturants"
+            android:parentActivityName=".Home"/>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <service android:name=".Pakage.ListenResturant" />
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="locked">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_map_key" />
+
+        <activity
+            android:name=".SigninActivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".SignUp"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".Home"
+            android:label="@string/title_activity_home"
+            android:screenOrientation="locked"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".FoodList"
+            android:parentActivityName=".Home" />
+        <activity android:name=".FoodDetail" />
+        <activity android:name=".Cart" />
+        <activity android:name=".Order" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+
+        <service
+            android:name=".Pakage.ListenOrder"
+            android:enabled="true"
+            android:exported="true" />
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider965086207018322"
+            android:exported="true" />
+    </application>
+
+</manifest>
